@@ -1,4 +1,4 @@
-dockerfile FROM python:3.9
+FROM python:3.13-alpine
 
 WORKDIR /code
 
