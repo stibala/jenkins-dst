@@ -70,7 +70,8 @@ pipeline {
                         sed -i "s+tag:.*+tag: ${DOCKER_TAG}+g" values.yml
                         helm upgrade --install app fastapi \
                             --values=values.yml \
-                            --namespace dev
+                            --namespace dev \
+                            --create-namespace
                     '''
                 }
             }
@@ -90,7 +91,8 @@ pipeline {
                         sed -i "s+tag:.*+tag: ${DOCKER_TAG}+g" values.yml
                         helm upgrade --install app fastapi \
                             --values=values.yml \
-                            --namespace staging
+                            --namespace staging \
+                            --create-namespace
                     '''
                 }
             }
@@ -116,7 +118,8 @@ pipeline {
                         sed -i "s+tag:.*+tag: ${DOCKER_TAG}+g" values.yml
                         helm upgrade --install app fastapi \
                             --values=values.yml \
-                            --namespace prod
+                            --namespace prod \
+                            --create-namespace
                     '''
                 }
             }
